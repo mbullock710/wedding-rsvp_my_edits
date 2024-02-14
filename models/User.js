@@ -28,6 +28,33 @@ User.init(
         isEmail: true,
       },
     },
+    attending: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false, 
+    },
+    dietary_preference: {
+      type: DataTypes.TEXT,
+      allowNull: true, 
+    },
+    plus_one: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false, 
+    },
+    guest_dietary_preference: {
+      type: DataTypes.TEXT,
+      allowNull: true, 
+    },
+  },
+  {
+    sequelize,
+    timestamps: false, 
+    freezeTableName: true, 
+    underscored: true, 
+    modelName: 'guest', 
+  }
+);
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -35,20 +62,12 @@ User.init(
         len: [8],
       },
     },
-  },
   {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
   }
-);
 
 module.exports = User;
