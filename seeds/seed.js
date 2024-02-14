@@ -1,17 +1,20 @@
-const sequelize = require('../config/connection');
-const { User } = require('../models');
+const sequelize = require('./config/connection');
+const fs = require('fs');
+const path = require('path');
 
-const userData = require('./userData.json');
+const sqlFilePath = path.join(__dirname, './db/seeds.sql');
+const sql = fs.readFileSync(sqlFilePath, 'utf8');
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
-  await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  process.exit(0);
-};
+async function seedDatabase() {
+    try {
+        await sequelize.sync({ force: true });
+        await sequelize.query(sql);
+        console.log('Database seeded successfully.');
+    } catch (error) {
+        console.error('Error seeding database:', error);
+    } finally {
+        await sequelize.close();
+    }
+}
 
 seedDatabase();
