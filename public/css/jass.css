@@ -17,8 +17,8 @@ html {
 /**
  * Remove the margin in all browsers.
  */
-body {
-  margin: 0;
+ body {
+  margin: 0%;
 }
 
 /**
@@ -414,9 +414,21 @@ label {
 
 input,
 select,
-textarea,
-button {
+textarea {
   margin: 0;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }
 
 a {
@@ -1109,7 +1121,11 @@ a:hover {
 }
 
 form {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* Center the form horizontally */
 }
 
 form .form-group {
@@ -1165,10 +1181,11 @@ form [type='radio'] {
 }
 
 .container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height as needed */
+  flex-direction: column;
 }
 
 .container.container-fluid {
