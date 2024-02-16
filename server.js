@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
+const { default: helmet } = require('helmet');
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -13,6 +14,7 @@ const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 
 // Security middleware should be applied early
 app.use(helmet());
