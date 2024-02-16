@@ -35,7 +35,7 @@ User.init(
     },
     dietary_preference: {
       type: DataTypes.TEXT,
-      allowNull: true, 
+      allowNull: false, 
     },
     plus_one: {
       type: DataTypes.BOOLEAN,
@@ -46,15 +46,6 @@ User.init(
       type: DataTypes.TEXT,
       allowNull: true, 
     },
-  },
-  {
-    sequelize,
-    timestamps: false, 
-    freezeTableName: true, 
-    underscored: true, 
-    modelName: 'guest', 
-  }
-);
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -62,6 +53,8 @@ User.init(
         len: [8],
       },
     },
+  },
+);
   {
     sequelize,
     timestamps: false,
@@ -69,5 +62,5 @@ User.init(
     underscored: true,
     modelName: 'user',
   }
-
+  
 module.exports = User;
