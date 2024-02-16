@@ -4,21 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
+  <title>Guest RSVP</title>
   <link rel="stylesheet" href="/css/jass.css">
+
+   <style>
+    body {
+      background-image: url('/assets/background.png');
+    }
+  </style>
 </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      User Registry
+      Guest RSVP
     </h1>
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}
+
+    <!-- Add your RSVP form here -->
+    <form action="/submit-rsvp" method="post">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="plusOne">Bringing a Plus One?</label>
+      <input type="checkbox" id="plusOne" name="plusOne">
+
+      <label for="mealChoice">Select Your Meal:</label>
+      <select id="mealChoice" name="mealChoice">
+        <option value="vegetarian">Vegetarian</option>
+        <option value="chicken">Chicken</option>
+        <option value="beef">Beef</option>
+      </select>
+
+      <button type="submit">RSVP</button>
+    </form>
   </main>
   <footer>
-      
+    <!-- Footer content goes here -->
   </footer>
 </body>
 
