@@ -14,47 +14,46 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
-        isEmail: true,
+        isEmail: true
       },
     },
     attending: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false, 
+      defaultValue: false 
     },
     dietary_preference: {
       type: DataTypes.TEXT,
-      allowNull: false, 
+      allowNull: false 
     },
     plus_one: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false, 
+      defaultValue: false 
     },
     guest_dietary_preference: {
       type: DataTypes.TEXT,
-      allowNull: true, 
+      allowNull: true
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
+        len: [8]
       },
     },
   },
-);
   {
     sequelize,
     timestamps: false,
@@ -62,5 +61,7 @@ User.init(
     underscored: true,
     modelName: 'user',
   }
+);
+  
   
 module.exports = User;

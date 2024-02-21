@@ -1,18 +1,22 @@
 const router = require('express').Router();
+const { User } = require('../models');
 
 router.get('/', async (req, res) => {
-  try{
+  try {
+    // Get all users, sorted by name
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
       order: [['name', 'ASC']],
     });
-    const users = userData.map((user) => user.get({ plain: true }));
-    //res.status(200).json(users);
-    console.log("GET /api/users");
-    return res.render('homepage', { layout: 'main' , users : users
-  // TODO: Render template with Sequelize data
-  res.render('homepage', { users });
-});
+
+    // Serialize user data so templates can read it
+    const users = userData.map((project) => project.get({ plain: true }));
+
+    // Pass serialized data into Handlebars.js template
+    res.render('homepage', { users });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

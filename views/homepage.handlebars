@@ -1,11 +1,26 @@
 {{#each users as |user|}}
-  <div class="row align-center mb-5">
-    <div class="col-md-6">
+  <div class="container mb-5">
+    <div class="form-container">
       <h2>{{{get_emoji}}} {{user.name}}</h2>
-    </div>
-    <div class="col-md-6">
       <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+
+      <!-- Your RSVP form here -->
+      <form action="/submit-rsvp" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="plusOne">Bringing a Plus One?</label>
+        <input type="checkbox" id="plusOne" name="plusOne">
+
+        <label for="mealChoice">Select Your Meal:</label>
+        <select id="mealChoice" name="mealChoice">
+          <option value="vegetarian">Vegetarian</option>
+          <option value="chicken">Chicken</option>
+          <option value="beef">Beef</option>
+        </select>
+
+        <button type="submit">RSVP</button>
+      </form>
     </div>
   </div>
 {{/each}}
-
