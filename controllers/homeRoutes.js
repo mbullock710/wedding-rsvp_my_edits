@@ -1,5 +1,8 @@
-const router = require('express').Router();
-const { User } = require('../models');
+const express = require('express');
+const router = express.Router();
+const helmet = require('helmet');
+
+router.use(helmet());
 
 router.get('/', async (req, res) => {
   try {
@@ -14,6 +17,21 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data into Handlebars.js template
     res.render('homepage', { users });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+router.post('/submit', async (req, res) => {
+  try {
+    const formData = req.body;
+    const newForm = await Form.create({
+      ...formData,
+    });
+
+    res.send('Form submitted successfully');
   } catch (err) {
     res.status(500).json(err);
   }
