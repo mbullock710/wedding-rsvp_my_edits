@@ -2,13 +2,11 @@
 
 ## Table of Contents  
 [Description](#Description)  
-[Installation](#Installation)  
-[Usage](#Usage)  
-[Tests](#Tests)  
+[Installation](#Installation)    
 
-  ## Description
+## Description
 
-  The objective of this project is to create a real-world full-stack application with the requirements below:
+The objective of this project is to create a real-world full-stack application with the requirements below:
   
 * Use Node.js and Express.js to create a RESTful API.
 
@@ -38,10 +36,13 @@
 
 * Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
   
-  ## Installation
 
-  Please install the packages within the package.json file before proceeding.
+This application is an online, paperless experience for the bride and groom to plan their special day a bit easier.
 
-  ## Usage
+We are coming upon wedding season in the era of eco-friendly and instant information, this application has a stress-free and secure way of storing all your wedding day guests' information and categorizing it instantaneously for the wedding planner.
 
-  Please execute the index.js in the terminal by entering in: node index.js. You will be presented with prompts to create a high-quality README.
+We wanted the user to be able to create a login, enter their name, add if they have a plus (adding their name if applicable), and check any dietary restriction boxes for the planner to notate.
+  
+## Installation
+
+Please install the packages within the package.json file before proceeding.
