@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const helmet = require('helmet');
+const { User, Form } = require('../models');
 
 router.use(helmet());
 
@@ -24,7 +25,7 @@ router.get('/', async (req, res) => {
 
 
 
-router.post('/submit', async (req, res) => {
+router.post('/submit-rsvp', async (req, res) => {
   try {
     const formData = req.body;
     const newForm = await Form.create({
