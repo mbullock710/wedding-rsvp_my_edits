@@ -1,7 +1,3 @@
-<script>
-  console.log('RSVP Form partial is being rendered');
-</script>
-
 <form action="/submit-rsvp" method="post">
   <label for="name">Guest Name:</label>
   <input type="text" id="name" name="name" required>
@@ -16,8 +12,22 @@
   <label for="plusOne">Bringing a Plus One?</label>
   <input type="checkbox" id="plusOne" name="plusOne">
 
-  <label for="guestDietaryPreference">Guest Dietary Preference:</label>
+  <label for="guestDietaryPreference" data-target="guestDietaryPreference">Guest Dietary Preference:</label>
   <input type="text" id="guestDietaryPreference" name="guestDietaryPreference">
 
   <button type="submit">RSVP</button>
 </form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var plusOneCheckbox = document.getElementById('plusOne');
+    var guestDietaryPreferenceField = document.getElementById('guestDietaryPreference');
+
+    plusOneCheckbox.addEventListener('change', function () {
+      guestDietaryPreferenceField.style.display = plusOneCheckbox.checked ? 'block' : 'none';
+    });
+
+    // Set initial display based on checkbox state
+    guestDietaryPreferenceField.style.display = plusOneCheckbox.checked ? 'block' : 'none';
+  });
+</script>
