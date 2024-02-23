@@ -2,7 +2,8 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const helmet = require('helmet');
-const routes = require('./controllers');
+const homeRoutes = require('./controllers/homeRoutes');
+const formRoutes = require('./controllers/formRoutes');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 
@@ -23,7 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+app.use('/', homeRoutes);
+app.use('/form', formRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

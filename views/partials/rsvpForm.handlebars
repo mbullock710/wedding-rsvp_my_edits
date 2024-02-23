@@ -18,16 +18,3 @@
   <button type="submit">RSVP</button>
 </form>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var plusOneCheckbox = document.getElementById('plusOne');
-    var guestDietaryPreferenceField = document.getElementById('guestDietaryPreference');
-
-    plusOneCheckbox.addEventListener('change', function () {
-      guestDietaryPreferenceField.style.display = plusOneCheckbox.checked ? 'block' : 'none';
-    });
-
-    // Set initial display based on checkbox state
-    guestDietaryPreferenceField.style.display = plusOneCheckbox.checked ? 'block' : 'none';
-  });
-</script>
