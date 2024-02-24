@@ -1,10 +1,8 @@
 {{#each users as |user|}}
   <div class="container mb-5">
     <div class="form-container">
-      <h2>{{{get_emoji}}} {{user.name}}</h2>
-      <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
-
-      <!-- Include the RSVP form partial -->
+      
+      <!-- RSVP form partial -->
       {{> partials/rsvpForm}}
     </div>
   </div>

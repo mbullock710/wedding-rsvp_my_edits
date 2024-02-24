@@ -23,8 +23,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
 router.post('/submit-rsvp', async (req, res) => {
   try {
     const formData = req.body;
