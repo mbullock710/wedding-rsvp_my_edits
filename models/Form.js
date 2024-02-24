@@ -5,7 +5,7 @@ const sequelize = require('../config/connection');
 class Form extends Model {}
 
 Form.init(
-  {{
+  {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
