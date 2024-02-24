@@ -1,6 +1,7 @@
+<h1>GUEST RSVP</h1>
 <form action="/edit-rsvp" method="post">
   <label for="name">Guest Name:</label>
-  <input type="text" id="name" name="name" required>
+  <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
 
   <label for="mealChoice">Select Your Meal:</label>
   <select id="dietary_preference" name="dietary_preference">
@@ -12,8 +13,8 @@
   <label for="plusOne">Bringing a Plus One?</label>
   <input type="checkbox" id="plusOne" name="plusOne">
 
-  <label for="guestDietaryPreference" data-target="guestDietaryPreference">Guest Dietary Preference:</label>
-  <input type="text" id="guestDietaryPreference" name="guestDietaryPreference">
+  <label for="guestDietaryPreference">Guest Dietary Preference:</label>
+  <input type="text" id="guestDietaryPreference" name="guestDietaryPreference" placeholder="Chicken, Beef, OR Vegetarian">
 
   <button type="submit">RSVP</button>
 </form>
