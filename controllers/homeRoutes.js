@@ -23,17 +23,33 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/submit-rsvp', async (req, res) => {
+router.get('/submit-rsvp', async (req, res) => {
+  try {
+    // Get all users, sorted by name
+    res.render('rsvpForm');
+  } catch (err) {
+    console.log(err); 
+    res.status(500).json(err);
+  }
+});
+     
+router.post('/edit-rsvp', async (req, res) => {
   try {
     const formData = req.body;
+    console.log('Form Data:', formData); // Log form data
     const newForm = await Form.create({
       ...formData,
     });
 
-    res.send('Form submitted successfully');
+    console.log('Form submitted successfully');
+    res.render('editrsvpForm', { newForm });
   } catch (err) {
-    res.status(500).json(err);
+    console.error('Form submission error:', err);
+    res.status(500).json({ error: err.message });
   }
 });
+
+//router.put update-rsvp
+//action of the rsvp form should have the id of the form you want to edit.
 
 module.exports = router;

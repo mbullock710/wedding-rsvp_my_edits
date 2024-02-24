@@ -1,0 +1,19 @@
+<form action="/update-rsvp" method="post">
+  <label for="name">EDIT Guest Name:</label>
+  <input type="text" id="name" name="name" value = {{name}} Name>
+
+  <label for="mealChoice">EDIT Select Your Meal:</label>
+  <select id="mealChoice" name="mealChoice">
+    <option value="vegetarian">Vegetarian</option>
+    <option value="chicken">Chicken</option>
+    <option value="beef">Beef</option>
+  </select>
+
+  <label for="plusOne">EDIT Bringing a Plus One?</label>
+  <input type="checkbox" id="plusOne" name="plusOne">
+
+  <label for="guestDietaryPreference" data-target="guestDietaryPreference">EDIT Guest Dietary Preference:</label>
+  <input type="text" id="guestDietaryPreference" name="guestDietaryPreference" value = {{guestDietaryPreference}} Meal>
+
+  <button type="submit">UPDATE RSVP</button>
+</form>

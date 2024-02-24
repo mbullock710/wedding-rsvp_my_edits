@@ -29,24 +29,6 @@ User.init(
         isEmail: true
       },
     },
-    attending: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false 
-    },
-    dietary_preference: {
-      type: DataTypes.TEXT,
-      allowNull: false 
-    },
-    plus_one: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false 
-    },
-    guest_dietary_preference: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
